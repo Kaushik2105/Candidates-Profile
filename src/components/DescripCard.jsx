@@ -14,7 +14,7 @@ const DescripCard = (props) => {
         setLoading(true);
         const response = await axios.post(
           "https://api.weekday.technology/adhoc/getSampleJdJSON",
-          { limit: 1000, offset: (currentPage - 1) * 10 },
+          { limit: 500, offset: (currentPage - 1) * 10 },
           {
             headers: {
               "Content-Type": "application/json",
@@ -48,11 +48,13 @@ const DescripCard = (props) => {
   }, []);
 
   return (
-    <div>
-      <h1>List of Job Details:</h1>
+    <div className="page">
       <div className="container">
         {jdList
-          .filter((object) => object.jobRole.includes(props.role))
+          .filter((item) => item.minExp >= props.expi)
+          .filter((item) => item.minJdSalary >= props.salary)
+          .filter((item) => item.jobRole.includes(props.role))
+
           .map((item) => (
             <Card
               className="card"

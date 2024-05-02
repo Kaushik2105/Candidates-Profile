@@ -8,6 +8,7 @@
   border-radius: 0.75rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   display: flex;
+  width: 50%;
   align-items: center;
   --tw-text-opacity: 1;
   color: rgb(9 9 11 / var(--tw-text-opacity));

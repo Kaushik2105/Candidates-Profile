@@ -9,7 +9,7 @@ const Card = (props) => {
           <h3 className="role">{props.role}</h3>
           <p className="text-zinc-950">{props.place}</p>
           <p className="salary">
-            Estimated Salary: ₹{props.minsal} - ₹{props.maxsal} LPA✅
+            Estimated Salary: {props.minsal} - {props.maxsal} LPA✅
           </p>
         </div>
         <div className="mt-4">
