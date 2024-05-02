@@ -1,0 +1,50 @@
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.job-list {
+  list-style: none;
+  padding: 0;
+}
+
+.job-card {
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.job-image img {
+  width: 100%;
+}
+
+.job-content {
+  padding: 20px;
+}
+
+.job-role {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.job-location {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.job-description {
+  margin-bottom: 20px;
+}
+
+.apply-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
