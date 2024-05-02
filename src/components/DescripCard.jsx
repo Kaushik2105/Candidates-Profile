@@ -3,7 +3,7 @@ import axios from "axios";
 import Card from "./Card";
 import "./descripcard.css";
 
-const DescripCard = () => {
+const DescripCard = (props) => {
   const [jdList, setJdList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -14,7 +14,7 @@ const DescripCard = () => {
         setLoading(true);
         const response = await axios.post(
           "https://api.weekday.technology/adhoc/getSampleJdJSON",
-          { limit: 100, offset: (currentPage - 1) * 10 },
+          { limit: 1000, offset: (currentPage - 1) * 10 },
           {
             headers: {
               "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const DescripCard = () => {
     };
 
     fetchData();
-  }, [currentPage]); // Fetch data when currentPage changes
+  }, [currentPage]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,24 +45,26 @@ const DescripCard = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []); // Add scroll event listener when component mounts
+  }, []);
 
   return (
     <div>
       <h1>List of Job Details:</h1>
       <div className="container">
-        {jdList.map((item) => (
-          <Card
-            className="card"
-            key={item._id}
-            role={item.jobRole}
-            place={item.location}
-            minsal={item.minJdSalary}
-            maxsal={item.maxJdSalary}
-            about={item.jobDetailsFromCompany}
-            exp={item.minExp}
-          />
-        ))}
+        {jdList
+          .filter((object) => object.jobRole.includes(props.role))
+          .map((item) => (
+            <Card
+              className="card"
+              key={item._id}
+              role={item.jobRole}
+              place={item.location}
+              minsal={item.minJdSalary}
+              maxsal={item.maxJdSalary}
+              about={item.jobDetailsFromCompany}
+              exp={item.minExp}
+            />
+          ))}
       </div>
       {loading && <p>Loading...</p>}
     </div>

@@ -1,10 +1,12 @@
-import DescripCard from "./components/DescripCard";
+// import DescripCard from "./components/DescripCard";
+
+import Selectors from "./components/Selctors";
 
 const App = () => {
   return (
     <>
       <div>
-        <DescripCard />
+        <Selectors />
       </div>
     </>
   );
