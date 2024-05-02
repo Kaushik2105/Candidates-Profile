@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "./Card";
+import "./descripcard.css";
 
 const DescripCard = () => {
   const [jdList, setJdList] = useState([]);
@@ -49,12 +50,11 @@ const DescripCard = () => {
   return (
     <div>
       <h1>List of Job Details:</h1>
-      {jdList.map((item) => (
-        <div
-          key={item.jdUid}
-          className="max-w-sm mx-auto bg-white overflow-hidden"
-        >
+      <div className="container">
+        {jdList.map((item) => (
           <Card
+            className="card"
+            key={item._id}
             role={item.jobRole}
             place={item.location}
             minsal={item.minJdSalary}
@@ -62,8 +62,8 @@ const DescripCard = () => {
             about={item.jobDetailsFromCompany}
             exp={item.minExp}
           />
-        </div>
-      ))}
+        ))}
+      </div>
       {loading && <p>Loading...</p>}
     </div>
   );
