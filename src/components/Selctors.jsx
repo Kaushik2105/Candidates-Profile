@@ -15,6 +15,7 @@ const Selectors = () => {
     "devops",
   ];
   const Experience = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const Salaries = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 
   const [role, setRole] = useState("");
   const [experience, setExperience] = useState(null);
@@ -111,6 +112,13 @@ const Selectors = () => {
             </button>
           )}
         </div>
+        <datalist id="salary">
+          <select>
+            {Salaries.map((option, index) => {
+              <option key={index} value={option}></option>;
+            })}
+          </select>
+        </datalist>
       </div>
       <DescripCard role={role} expi={experience} salary={sala} />
     </>
