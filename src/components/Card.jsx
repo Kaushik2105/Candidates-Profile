@@ -6,22 +6,22 @@ const Card = (props) => {
   const maxLength = 300; // Maximum number of characters to show initially
 
   const toggleExpanded = () => {
-    setExpanded(!expanded);
+    setExpanded(!expanded); //Helps to expand or shrink the paragraph
   };
 
   return (
     <div className="card">
-      <div className="poster space-x-0">⏳ Posted 10 days ago</div>
-      <div className="mt-4">
+      <div className="poster">⏳ Posted 10 days ago</div>
+      <div className="middle-card">
         <h3 className="role">{props.role}</h3>
-        <p className="text-zinc-950">{props.place}</p>
+        <p className="location">{props.place}</p>
         <p className="salary">
           Estimated Salary: ₹{props.minsal} - ₹{props.maxsal} LPA✅
         </p>
       </div>
-      <div className="mt-4">
-        <h4 className="text-zinc-700 font-semibold">About Company:</h4>
-        <p className="text-zinc-600 text-sm">
+      <div className="about">
+        <h4>About Company:</h4>
+        <p>
           {expanded ? props.about : props.about.slice(0, maxLength)}
           {props.about.length > maxLength && (
             <>
@@ -41,17 +41,13 @@ const Card = (props) => {
           )}
         </p>
       </div>
-      <div className="mt-4">
-        <p className="text-zinc-600 ">Minimum Experience</p>
-        <p className="text-zinc-900 ">{props.exp} years</p>
+      <div className="exp">
+        <p className="min-exp">Minimum Experience</p>
+        <p className="year">{props.exp} years</p>
       </div>
-      <div className="mt-6 flex flex-col">
-        <button className="bg-green-500 dark:bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-600">
-          Easy Apply
-        </button>
-        <button className="bg-blue-500 dark:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-600 mt-2">
-          Unlock referral asks
-        </button>
+      <div className="both-button">
+        <button className="button1">Easy Apply</button>
+        <button className="button2">Unlock referral asks</button>
       </div>
     </div>
   );

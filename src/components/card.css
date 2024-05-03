@@ -1,6 +1,7 @@
 .card {
+  font-family: sans-serif;
   box-shadow: 0 0 9px rgba(0, 0, 0, 0.2);
-  padding: 1.25rem;
+  padding: 20px;
   border-radius: 30px;
 }
 
@@ -13,12 +14,19 @@
   align-items: center;
   color: rgb(9 9 11);
 }
+.middle-card {
+  margin-top: 1rem;
+}
 
 .role {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;
   color: rgb(24 24 27);
+}
+
+.location {
+  color: rgb(9 9 11);
 }
 
 .salary {
@@ -28,12 +36,72 @@
   color: rgb(82 82 91);
 }
 
+.about {
+  margin-top: 1rem;
+}
+
+.about h4 {
+  color: rgb(63 63 70);
+  font-weight: 600;
+}
+
+.exp {
+  margin-top: 1rem;
+}
+
+.min-exp {
+  color: rgb(82 82 91);
+}
+
+.year {
+  color: rgb(24 24 27);
+}
+
+.both-button {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.about p {
+  color: rgb(82 82 91);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .view {
   color: rgb(59 130 246);
+  background: transparent;
+  border: none;
 }
 
 .view:hover {
   text-decoration: underline;
+}
+
+.button1 {
+  background-color: rgb(34 197 94);
+  color: rgb(255 255 255);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+}
+
+.button2 {
+  background-color: rgb(59 130 246);
+  color: rgb(255 255 255);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  border: none;
 }
 
 @media screen and (max-width: 768px) {

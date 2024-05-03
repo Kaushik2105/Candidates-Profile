@@ -3,29 +3,30 @@
   margin-right: 30px;
 }
 
-.container {
+.containers {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   padding: 15px;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
 }
 
 @media (max-width: 1024px) {
-  .container {
+  .containers {
     justify-content: center;
     justify-content: space-between;
   }
 }
 
 @media (max-width: 768px) {
-  .container {
+  .containers {
     justify-content: space-between;
   }
 }
 
 @media (max-width: 576px) {
-  .container {
+  .containers {
     justify-content: center;
     justify-content: space-between;
   }

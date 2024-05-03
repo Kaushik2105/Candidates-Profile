@@ -49,7 +49,7 @@ const DescripCard = (props) => {
 
   return (
     <div className="page">
-      <div className="container">
+      <div className="containers">
         {jdList
           .filter((item) => item.minExp >= props.expi)
           .filter((item) => item.minJdSalary >= props.salary)

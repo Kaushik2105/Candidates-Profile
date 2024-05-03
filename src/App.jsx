@@ -1,5 +1,3 @@
-// import DescripCard from "./components/DescripCard";
-
 import Selectors from "./components/Selctors";
 
 const App = () => {
