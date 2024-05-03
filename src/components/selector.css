@@ -1,3 +1,8 @@
+.input-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+
 .inputs {
   display: flex;
   justify-content: center;
@@ -6,12 +11,49 @@
   justify-content: space-between;
   margin-left: 20%;
   margin-right: 20%;
+  padding-right: 30px;
 }
 
 .dropin {
-  width: 11rem;
+  width: 100%;
   border-width: 1px;
   border-color: rgb(173, 162, 162);
   border-radius: 5px;
+  color: rgb(93, 87, 87);
   padding: 5px;
+  padding-right: 30px;
+}
+
+.input-container.selected .dropin {
+  outline: 2px solid blue;
+}
+
+.cancel-button {
+  position: absolute;
+  right: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #050505;
+}
+
+@media screen and (max-width: 768px) {
+  .input-container {
+    width: calc(50% - 10px);
+  }
+  .inputs {
+    display: flexbox;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .input-container {
+    width: 100%;
+  }
+  .inputs {
+    display: grid;
+  }
 }

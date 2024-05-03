@@ -23,6 +23,7 @@ const Selectors = () => {
   const handleRole = (event) => {
     setRole(event.target.value);
   };
+
   const handleExp = (event) => {
     setExperience(event.target.value);
   };
@@ -31,10 +32,22 @@ const Selectors = () => {
     setSala(event.target.value);
   };
 
+  const handleCancelRole = () => {
+    setRole("");
+  };
+
+  const handleCancelExp = () => {
+    setExperience(null);
+  };
+
+  const handleCancelSal = () => {
+    setSala(null);
+  };
+
   return (
     <>
       <div className="inputs">
-        <div>
+        <div className={`input-container ${role && "selected"}`}>
           <input
             list="roles"
             placeholder="Roles"
@@ -42,46 +55,61 @@ const Selectors = () => {
             value={role}
             onChange={handleRole}
           />
-
-          <datalist id="roles">
-            <select>
-              {Roles.map((option, index) => (
-                <optgroup key={index} label="ENGINEERING">
-                  <option value={option}></option>
-                </optgroup>
-              ))}
-              <optgroup label="SALES">
-                <option value="Sales Development  Representative"></option>
-                <option value="Account Executive"></option>
-              </optgroup>
-            </select>
-          </datalist>
+          {role && (
+            <button onClick={handleCancelRole} className="cancel-button">
+              &times;
+            </button>
+          )}
         </div>
-        <div>
+        <datalist id="roles">
+          <select>
+            {Roles.map((option, index) => (
+              <optgroup key={index} label="ENGINEERING">
+                <option value={option}></option>
+              </optgroup>
+            ))}
+            <optgroup label="SALES">
+              <option value="Sales Development  Representative"></option>
+              <option value="Account Executive"></option>
+            </optgroup>
+          </select>
+        </datalist>
+
+        <div className={`input-container ${experience && "selected"}`}>
           <input
             list="exp"
             placeholder="Experience"
             className="dropin"
-            value={experience}
+            value={experience || ""}
             onChange={handleExp}
           />
-
-          <datalist id="exp">
-            <select>
-              {Experience.map((option, index) => (
-                <option key={index} value={option}></option>
-              ))}
-            </select>
-          </datalist>
+          {experience && (
+            <button onClick={handleCancelExp} className="cancel-button">
+              &times;
+            </button>
+          )}
         </div>
-        <div>
+        <datalist id="exp">
+          <select>
+            {Experience.map((option, index) => (
+              <option key={index} value={option}></option>
+            ))}
+          </select>
+        </datalist>
+
+        <div className={`input-container ${sala && "selected"}`}>
           <input
             list="salary"
             placeholder="Minimum Base Pay Salary"
             className="dropin"
-            value={sala}
+            value={sala || ""}
             onChange={handleSal}
           />
+          {sala && (
+            <button onClick={handleCancelSal} className="cancel-button">
+              &times;
+            </button>
+          )}
         </div>
       </div>
       <DescripCard role={role} expi={experience} salary={sala} />

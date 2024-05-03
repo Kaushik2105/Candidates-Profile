@@ -7,25 +7,37 @@
 .poster {
   border-radius: 0.75rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: small;
   display: flex;
-  width: 50%;
+  width: 40%;
   align-items: center;
-  --tw-text-opacity: 1;
-  color: rgb(9 9 11 / var(--tw-text-opacity));
+  color: rgb(9 9 11);
 }
 
 .role {
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 600;
-  --tw-text-opacity: 1;
-  color: rgb(24 24 27 / var(--tw-text-opacity));
+  color: rgb(24 24 27);
 }
 
 .salary {
   align-items: center;
   display: flex;
   font-weight: 600;
-  --tw-text-opacity: 1;
-  color: rgb(82 82 91 / var(--tw-text-opacity));
+  color: rgb(82 82 91);
+}
+
+.view {
+  color: rgb(59 130 246);
+}
+
+.view:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .poster {
+    width: 70%;
+  }
 }
